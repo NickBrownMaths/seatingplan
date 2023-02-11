@@ -1,3 +1,5 @@
+import TableParty from "./TableParty";
+
 function Table(props) {
   return (
     <div className="Table">
@@ -10,6 +12,20 @@ function Table(props) {
       <button className='KillButton' onClick={() => { props.setTableKill(props.index) }}>
         X
       </button>
+      <div className="TablePartyList">
+        {
+          props.table.PARTIES.map((party, index) => (
+          <TableParty
+            key={index}
+            index={index}
+            tableIdx={props.index}
+            party={party}
+            setPartyKill={props.setPartyKill}
+            setPartyLink={props.setPartyLink}
+          />
+          ))
+        }
+      </div>
     </div>
   )
 }

@@ -8,6 +8,8 @@
   --colour7: #ff6699;
   --colour8: #229933;
   --colour9: #22ff33;
+  --colour10: #888800;
+  --colour11: #ffff00;
 
 
 
@@ -34,7 +36,8 @@ body {
 .TableList,
 .PartyList,
 .Table,
-.Party {
+.Party,
+.TableParty {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -65,12 +68,14 @@ body {
   min-height: var(--height);
   margin: var(--margin);
 }
+
 .FormInputSmall {
   min-width: var(--widthSmall);
   max-width: var(--widthSmall);
   min-height: var(--height);
   margin: var(--margin);
 }
+
 .FormButton {
   min-width: var(--widthSmall);
   min-height: var(--height);
@@ -82,8 +87,8 @@ body {
 
 .KillButton {
   position: absolute;
-  right:0px;
-  top:0px;
+  right: 0px;
+  top: 0px;
   min-height: var(--height);
   min-width: var(--height);
   max-height: var(--height);
@@ -97,8 +102,8 @@ body {
 
 .LinkButton {
   position: absolute;
-  left:0px;
-  top:0px;
+  left: 0px;
+  top: 0px;
   min-height: var(--height);
   min-width: var(--height);
   max-height: var(--height);
@@ -111,8 +116,25 @@ body {
   background-color: var(--colour9);
 }
 
+.UnlinkButton {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  min-height: var(--height);
+  min-width: var(--height);
+  max-height: var(--height);
+  max-width: var(--height);
+  min-height: var(--height);
+  background-color: var(--colour10);
+  color: var(--colour1);
+}
+.UnlinkButton:hover {
+  background-color: var(--colour11);
+}
+
 .Table,
-.Party {
+.Party,
+.TableParty {
   position: relative;
   margin: var(--margin);
   max-width: var(--widthBig);
@@ -125,26 +147,30 @@ body {
 
 .Table {
   max-width: var(--widthBigger);
-  min-width: var(--widthBigger); 
+  min-width: var(--widthBigger);
 }
 
-.WorkArea{
+.TableParty{
+  margin-top: 15px;
+}
+
+.WorkArea {
   position: relative;
 }
 
-.PartyList{
+.PartyList {
   border-style: solid;
   position: absolute;
   background-color: var(--colour2);
   max-width: var(--widthBigger);
-  left:0;
-  top:0
+  left: 0;
+  top: 0
 }
 
 .TableList {
   border-style: solid;
   position: absolute;
   background-color: var(--colour2);
-  left:var(--widthBiggerer);
-  top:0
+  left: var(--widthBiggerer);
+  top: 0
 }

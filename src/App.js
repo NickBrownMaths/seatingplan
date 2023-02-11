@@ -24,8 +24,8 @@ function App() {
 
   useEffect(() => {
     if (partyTemp !== 0) {
-      if(partyTemp.BUMS === '') {partyTemp.BUMS = 0}
-      if(partyTemp.KIDS === '') {partyTemp.KIDS = 0}
+      if (partyTemp.BUMS === '') { partyTemp.BUMS = 0 }
+      if (partyTemp.KIDS === '') { partyTemp.KIDS = 0 }
       setPartyList(partyList => [...partyList, partyTemp]);
     }
   }, [partyTemp]);
@@ -50,14 +50,22 @@ function App() {
 
   useEffect(() => {
     if (partyLink !== null && tableLink !== null) {
-      console.log('T: ' + tableLink + ', P: ' + partyLink);
+
+      let newParties = partyList;
+      let activeParty = newParties.splice(partyLink, 1)
+      setPartyList(newParties);
+
+      let newTables = tableList;
+      newTables[tableLink].PARTIES.push(activeParty);
+      setTableList(newTables)
+
       setTableLink(null);
       setPartyLink(null);
     }
   }, [partyLink, tableLink]);
 
 
-
+  console.log(tableList)
 
   let buttons = [];
   buttons.push([() => setCurrentPage('addTable'), 'Session',]);
