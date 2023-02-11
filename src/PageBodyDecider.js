@@ -5,7 +5,8 @@ function PageBodyDecider(props) {
     return (
       <PageAddTable
         setTableList={props.setTableList} tableList={props.tableList}
-        setTableTemp={props.setTableTemp} tableTemp={props.tableTemp}
+        setTableTemp={props.setTableTemp}
+        setTableKill={props.setTableKill}
       />
     )
   }

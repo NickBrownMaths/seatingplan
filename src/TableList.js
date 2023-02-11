@@ -5,7 +5,12 @@ function TableList(props) {
     <div className="TableList">
       {
         props.tableList.map((table, index) => (
-          <Table key={index} table={table} />
+          <Table
+            key={index}
+            index={index}
+            table={table}
+            setTableKill={props.setTableKill}
+          />
         ))
       }
     </div>

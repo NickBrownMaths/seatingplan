@@ -7,9 +7,12 @@ function PageAddTable(props) {
       <TableForm
         placeholder={'Enter table name'}
         setTableList={props.setTableList} tableList={props.tableList}
-        setTableTemp={props.setTableTemp} tableTemp={props.tableTemp}
+        setTableTemp={props.setTableTemp}
       />
-      <TableList tableList={props.tableList}/>
+      <TableList
+        tableList={props.tableList}
+        setTableKill={props.setTableKill}
+      />
     </div>
   )
 }

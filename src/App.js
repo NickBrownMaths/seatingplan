@@ -11,6 +11,8 @@ function App() {
   const [partyList, setPartyList] = useState([]);
   const [tableTemp, setTableTemp] = useState(0);
   const [partyTemp, setPartyTemp] = useState(0);
+  const [tableKill, setTableKill] = useState(null);
+  const [partyKill, setPartyKill] = useState(null);
 
   useEffect(() => {
     if (tableTemp !== 0) {
@@ -19,11 +21,13 @@ function App() {
   }, [tableTemp]);
 
   useEffect(() => {
-    if (tableTemp !== 0) {
-      console.log(tableTemp);
-      console.log(tableList);
+    if (tableKill !== null) {
+      let newList = tableList;
+      newList.splice(tableKill, 1);
+      setTableList(newList);
+      setTableKill(null);
     }
-  }, [tableList]);
+  }, [tableKill]);
 
 
 
@@ -40,7 +44,8 @@ function App() {
       <PageBodyDecider
         currentPage={currentPage}
         setTableList={setTableList} tableList={tableList}
-        setTableTemp={setTableTemp} tableTemp={tableTemp}
+        setTableTemp={setTableTemp}
+        setTableKill={setTableKill}
       />
     </div>
   );
