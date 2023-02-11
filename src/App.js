@@ -13,6 +13,8 @@ function App() {
   const [partyTemp, setPartyTemp] = useState(0);
   const [tableKill, setTableKill] = useState(null);
   const [partyKill, setPartyKill] = useState(null);
+  const [tableLink, setTableLink] = useState(null);
+  const [partyLink, setPartyLink] = useState(null);
 
   useEffect(() => {
     if (tableTemp !== 0) {
@@ -22,6 +24,8 @@ function App() {
 
   useEffect(() => {
     if (partyTemp !== 0) {
+      if(partyTemp.BUMS === '') {partyTemp.BUMS = 0}
+      if(partyTemp.KIDS === '') {partyTemp.KIDS = 0}
       setPartyList(partyList => [...partyList, partyTemp]);
     }
   }, [partyTemp]);
@@ -35,13 +39,30 @@ function App() {
     }
   }, [tableKill]);
 
-  console.log(partyList);
+  useEffect(() => {
+    if (partyKill !== null) {
+      let newList = partyList;
+      newList.splice(partyKill, 1);
+      setPartyList(newList);
+      setPartyKill(null);
+    }
+  }, [partyKill]);
+
+  useEffect(() => {
+    if (partyLink !== null && tableLink !== null) {
+      console.log('T: ' + tableLink + ', P: ' + partyLink);
+      setTableLink(null);
+      setPartyLink(null);
+    }
+  }, [partyLink, tableLink]);
+
+
+
 
   let buttons = [];
-  buttons.push([() => setCurrentPage('addTable'), 'Add Tables & Parties',]);
+  buttons.push([() => setCurrentPage('addTable'), 'Session',]);
   buttons.push([() => setCurrentPage('saveSesh'), 'Save Session',]);
   buttons.push([() => setCurrentPage('loadSesh'), 'Load Session',]);
-  buttons.push([() => setCurrentPage('allocate'), 'Allocate Tables',]);
 
   return (
     <div className="App">
@@ -51,9 +72,11 @@ function App() {
         setTableList={setTableList} tableList={tableList}
         setTableTemp={setTableTemp}
         setTableKill={setTableKill}
+        setTableLink={setTableLink}
         setPartyList={setPartyList} partyList={partyList}
         setPartyTemp={setPartyTemp}
         setPartyKill={setPartyKill}
+        setPartyLink={setPartyLink}
       />
     </div>
   );

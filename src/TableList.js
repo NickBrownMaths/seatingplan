@@ -10,6 +10,7 @@ function TableList(props) {
             index={index}
             table={table}
             setTableKill={props.setTableKill}
+            setTableLink={props.setTableLink}
           />
         ))
       }

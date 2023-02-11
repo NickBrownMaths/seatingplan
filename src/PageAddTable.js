@@ -1,6 +1,7 @@
 import PartyForm from "./PartyForm";
 import TableForm from "./TableForm";
 import TableList from "./TableList";
+import PartyList from "./PartyList";
 
 function PageAddTable(props) {
   return (
@@ -9,14 +10,22 @@ function PageAddTable(props) {
         setTableList={props.setTableList} tableList={props.tableList}
         setTableTemp={props.setTableTemp}
       />
-      <PartyForm 
-      setPartyList={props.setPartyList} partyList={props.partyList}
-      setPartyTemp={props.setPartyTemp}
+      <PartyForm
+        setPartyList={props.setPartyList} partyList={props.partyList}
+        setPartyTemp={props.setPartyTemp}
       />
-      <TableList
-        tableList={props.tableList}
-        setTableKill={props.setTableKill}
-      />
+      <div className="WorkArea">
+        <PartyList
+          partyList={props.partyList}
+          setPartyKill={props.setPartyKill}
+          setPartyLink={props.setPartyLink}
+        />
+        <TableList
+          tableList={props.tableList}
+          setTableKill={props.setTableKill}
+          setTableLink={props.setTableLink}
+        />
+      </div>
     </div>
   )
 }

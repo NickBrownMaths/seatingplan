@@ -6,11 +6,16 @@
   --colour5: #caf0f8;
   --colour6: #ff2233;
   --colour7: #ff6699;
+  --colour8: #229933;
+  --colour9: #22ff33;
+
 
 
   --height: 30px;
   --width: 200px;
   --widthBig: 300px;
+  --widthBigger: 350px;
+  --widthBiggerer: 370px;
   --widthSmall: 100px;
   --margin: 10px;
 }
@@ -27,7 +32,9 @@ body {
 .NavBar,
 .Form,
 .TableList,
-.Table {
+.PartyList,
+.Table,
+.Party {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -78,6 +85,9 @@ body {
   right:0px;
   top:0px;
   min-height: var(--height);
+  min-width: var(--height);
+  max-height: var(--height);
+  max-width: var(--height);
   background-color: var(--colour6);
   color: var(--colour1);
 }
@@ -85,13 +95,56 @@ body {
   background-color: var(--colour7);
 }
 
-.Table {
+.LinkButton {
+  position: absolute;
+  left:0px;
+  top:0px;
+  min-height: var(--height);
+  min-width: var(--height);
+  max-height: var(--height);
+  max-width: var(--height);
+  min-height: var(--height);
+  background-color: var(--colour8);
+  color: var(--colour1);
+}
+.LinkButton:hover {
+  background-color: var(--colour9);
+}
+
+.Table,
+.Party {
   position: relative;
   margin: var(--margin);
   max-width: var(--widthBig);
   min-width: var(--widthBig);
   min-height: var(--height);
   border-style: solid;
-  border-color: var(--colour2);
-  background-color: var(--colour3);
+  border-color: var(--colour3);
+  background-color: var(--colour4);
+}
+
+.Table {
+  max-width: var(--widthBigger);
+  min-width: var(--widthBigger); 
+}
+
+.WorkArea{
+  position: relative;
+}
+
+.PartyList{
+  border-style: solid;
+  position: absolute;
+  background-color: var(--colour2);
+  max-width: var(--widthBigger);
+  left:0;
+  top:0
+}
+
+.TableList {
+  border-style: solid;
+  position: absolute;
+  background-color: var(--colour2);
+  left:var(--widthBiggerer);
+  top:0
 }
