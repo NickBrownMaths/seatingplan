@@ -1,30 +1,69 @@
-:root{
+:root {
   --colour1: #03045e;
   --colour2: #0077b6;
   --colour3: #00b4d8;
   --colour4: #90e0ef;
   --colour5: #caf0f8;
+
+  --height: 30px;
+  --width:200px;
+  --widthBig:300px;
+  --widthSmall:50px;
+  --margin: 10px;
 }
 
-body{
+body {
   background-color: var(--colour1);
+  font-family: Arial;
 }
 
 .App {
   text-align: center;
 }
 
-.NavBar {
+.NavBar,
+.Form,
+.TableList {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-content: center;
 }
+
 .NavButton {
-  min-width: 200px;
-  min-height: 30px;
-  margin: 10px;
+  min-width: var(--width);
+  min-height: var(--height);
+  margin: var(--margin);
 
   background-color: var(--colour2);
-  color: var(--colour5);
+  color: var(--colour1);
+}
+.NavButton:hover,
+.FormButton:hover {
+  background-color: var(--colour3);
+}
+
+::placeholder {
+  color: var(--colour1);
+}
+.FormInput {
+  min-width: var(--width);
+  min-height: var(--height);
+  margin: var(--margin);
+}
+.FormButton {
+  min-width: var(--widthSmall);
+  min-height: var(--height);
+  margin: var(--margin);
+
+  background-color: var(--colour2);
+  color: var(--colour1);
+}
+
+.Table {
+  margin: var(--margin);
+  max-width: var(--widthBig);
+  min-width: var(--widthBig);
+  border-color: var(--colour4);
+  background-color: var(--colour3);
 }
