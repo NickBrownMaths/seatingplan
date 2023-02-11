@@ -20,8 +20,7 @@ function Table(props) {
             index={index}
             tableIdx={props.index}
             party={party}
-            setPartyKill={props.setPartyKill}
-            setPartyLink={props.setPartyLink}
+            setSeverLink={props.setSeverLink}
           />
           ))
         }

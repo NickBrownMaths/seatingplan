@@ -12,6 +12,7 @@ function PageBodyDecider(props) {
         setPartyTemp={props.setPartyTemp}
         setPartyKill={props.setPartyKill}
         setPartyLink={props.setPartyLink}
+        setSeverLink={props.setSeverLink}
       />
     )
   }

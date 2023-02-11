@@ -24,6 +24,7 @@ function PageAddTable(props) {
           tableList={props.tableList}
           setTableKill={props.setTableKill}
           setTableLink={props.setTableLink}
+          setSeverLink={props.setSeverLink}
         />
       </div>
     </div>

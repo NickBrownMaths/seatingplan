@@ -11,6 +11,7 @@ function TableList(props) {
             table={table}
             setTableKill={props.setTableKill}
             setTableLink={props.setTableLink}
+            setSeverLink={props.setSeverLink}
           />
         ))
       }
