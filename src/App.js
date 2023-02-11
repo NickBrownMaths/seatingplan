@@ -33,9 +33,25 @@ function App() {
 
   useEffect(() => {
     if (tableKill !== null) {
-      let newList = tableList;
-      newList.splice(tableKill, 1);
-      setTableList(newList);
+
+      console.log('TK')
+
+      let newtables = tableList;
+      let removedTable = newtables.splice(tableKill, 1);
+      setTableList(newtables);
+
+
+      console.log('TK 2')
+      console.log(removedTable)
+
+
+      let newParties = partyList;
+      newParties.push(...removedTable[0].PARTIES);
+      setPartyList(newParties);
+
+
+      console.log('TK 3')
+
       setTableKill(null);
     }
   }, [tableKill]);
