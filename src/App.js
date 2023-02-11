@@ -15,6 +15,7 @@ function App() {
   const [partyKill, setPartyKill] = useState(null);
   const [tableLink, setTableLink] = useState(null);
   const [partyLink, setPartyLink] = useState(null);
+  const [severLink, setSeverLink] = useState({});
 
   useEffect(() => {
     if (tableTemp !== 0) {
@@ -56,16 +57,15 @@ function App() {
       setPartyList(newParties);
 
       let newTables = tableList;
-      newTables[tableLink].PARTIES.push(activeParty);
+      newTables[tableLink].PARTIES.push(activeParty[0]);
+      newTables[tableLink].BUMS = + newTables[tableLink].BUMS + activeParty[0].BUMS;
+      newTables[tableLink].KIDS = + newTables[tableLink].KIDS + activeParty[0].KIDS;
       setTableList(newTables)
 
       setTableLink(null);
       setPartyLink(null);
     }
   }, [partyLink, tableLink]);
-
-
-  console.log(tableList)
 
   let buttons = [];
   buttons.push([() => setCurrentPage('addTable'), 'Session',]);
@@ -85,6 +85,7 @@ function App() {
         setPartyTemp={setPartyTemp}
         setPartyKill={setPartyKill}
         setPartyLink={setPartyLink}
+        setSeverLink={setSeverLink}
       />
     </div>
   );
