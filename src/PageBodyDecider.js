@@ -7,6 +7,9 @@ function PageBodyDecider(props) {
         setTableList={props.setTableList} tableList={props.tableList}
         setTableTemp={props.setTableTemp}
         setTableKill={props.setTableKill}
+        setPartyList={props.setPartyList} partyList={props.partyList}
+        setPartyTemp={props.setPartyTemp}
+        setPartyKill={props.setPartyKill}
       />
     )
   }

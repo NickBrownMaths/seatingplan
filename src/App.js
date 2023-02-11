@@ -21,6 +21,12 @@ function App() {
   }, [tableTemp]);
 
   useEffect(() => {
+    if (partyTemp !== 0) {
+      setPartyList(partyList => [...partyList, partyTemp]);
+    }
+  }, [partyTemp]);
+
+  useEffect(() => {
     if (tableKill !== null) {
       let newList = tableList;
       newList.splice(tableKill, 1);
@@ -29,11 +35,10 @@ function App() {
     }
   }, [tableKill]);
 
-
+  console.log(partyList);
 
   let buttons = [];
-  buttons.push([() => setCurrentPage('addTable'), 'Add Table',]);
-  buttons.push([() => setCurrentPage('addParty'), 'Add Party',]);
+  buttons.push([() => setCurrentPage('addTable'), 'Add Tables & Parties',]);
   buttons.push([() => setCurrentPage('saveSesh'), 'Save Session',]);
   buttons.push([() => setCurrentPage('loadSesh'), 'Load Session',]);
   buttons.push([() => setCurrentPage('allocate'), 'Allocate Tables',]);
@@ -46,6 +51,9 @@ function App() {
         setTableList={setTableList} tableList={tableList}
         setTableTemp={setTableTemp}
         setTableKill={setTableKill}
+        setPartyList={setPartyList} partyList={partyList}
+        setPartyTemp={setPartyTemp}
+        setPartyKill={setPartyKill}
       />
     </div>
   );

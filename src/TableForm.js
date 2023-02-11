@@ -6,8 +6,8 @@ function TableForm(props) {
 
   return (
     <form className='Form' onSubmit={handleSubmit((data) => { props.setTableTemp({NAME: data.tableName, BUMS: 0, KIDS: 0, }) })}>
-      <input {...register('tableName')} placeholder={props.placeholder} className='FormInput' />
-      <input className='FormButton' type='submit' value='Add' />
+      <input {...register('tableName')} placeholder={'Enter table name'} className='FormInput' />
+      <input className='FormButton' type='submit' value='Add Table' />
     </form>
   )
 }

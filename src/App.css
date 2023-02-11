@@ -11,7 +11,7 @@
   --height: 30px;
   --width: 200px;
   --widthBig: 300px;
-  --widthSmall: 50px;
+  --widthSmall: 100px;
   --margin: 10px;
 }
 
@@ -54,10 +54,16 @@ body {
 
 .FormInput {
   min-width: var(--width);
+  max-width: var(--width);
   min-height: var(--height);
   margin: var(--margin);
 }
-
+.FormInputSmall {
+  min-width: var(--widthSmall);
+  max-width: var(--widthSmall);
+  min-height: var(--height);
+  margin: var(--margin);
+}
 .FormButton {
   min-width: var(--widthSmall);
   min-height: var(--height);
