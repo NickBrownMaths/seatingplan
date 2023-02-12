@@ -19,12 +19,14 @@ function PageAddTable(props) {
           partyList={props.partyList}
           setPartyKill={props.setPartyKill}
           setPartyLink={props.setPartyLink}
+          partyLink={props.partyLink}
         />
         <TableList
           tableList={props.tableList}
           setTableKill={props.setTableKill}
           setTableLink={props.setTableLink}
           setSeverLink={props.setSeverLink}
+          tableLink={props.tableLink}
         />
       </div>
     </div>

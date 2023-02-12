@@ -7,11 +7,11 @@ function PageBodyDecider(props) {
         setTableList={props.setTableList} tableList={props.tableList}
         setTableTemp={props.setTableTemp}
         setTableKill={props.setTableKill}
-        setTableLink={props.setTableLink}
+        setTableLink={props.setTableLink} tableLink={props.tableLink}
         setPartyList={props.setPartyList} partyList={props.partyList}
         setPartyTemp={props.setPartyTemp}
-        setPartyKill={props.setPartyKill}
-        setPartyLink={props.setPartyLink}
+        setPartyKill={props.setPartyKill} 
+        setPartyLink={props.setPartyLink} partyLink={props.partyLink}
         setSeverLink={props.setSeverLink}
       />
     )

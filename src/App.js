@@ -106,8 +106,8 @@ function App() {
         setPartyList={setPartyList} partyList={partyList}
         setPartyTemp={setPartyTemp}
         setPartyKill={setPartyKill}
-        setPartyLink={setPartyLink}
-        setSeverLink={setSeverLink}
+        setPartyLink={setPartyLink} partyLink={partyLink}
+        setSeverLink={setSeverLink} tableLink={tableLink}
       />
     </div>
   );
