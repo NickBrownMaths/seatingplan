@@ -17,6 +17,11 @@ function App() {
   const [loadData, setLoadData] = useState(null);
 
   useEffect(() => {
+    if (currentPage === 'formSent') {setCurrentPage('addTable') ;}
+  }, [currentPage]);
+
+
+  useEffect(() => {
     if (tableTemp !== 0) {
       setTableList(tableList => [...tableList, tableTemp]);
     }
