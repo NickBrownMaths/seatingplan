@@ -11,6 +11,7 @@ function PartyList(props) {
             party={party}
             setPartyKill={props.setPartyKill}
             setPartyLink={props.setPartyLink}
+            partyLink={props.partyLink}
           />
         ))
       }
