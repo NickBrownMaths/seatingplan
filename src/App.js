@@ -5,7 +5,7 @@ import PageBodyDecider from './PageBodyDecider';
 
 function App() {
 
-  const [currentPage, setCurrentPage] = useState('addTable');
+  const [currentPage, setCurrentPage] = useState('instruct');
 
   const [tableList, setTableList] = useState([]);
   const [partyList, setPartyList] = useState([]);
@@ -87,7 +87,8 @@ function App() {
   }, [severLink]);
 
   let buttons = [];
-  buttons.push([() => setCurrentPage('addTable'), 'Session',]);
+  buttons.push([() => setCurrentPage('instruct'), 'Instructions',]);
+  buttons.push([() => setCurrentPage('addTable'), 'Assign',]);
   buttons.push([() => setCurrentPage('saveSesh'), 'Save Session',]);
   buttons.push([() => setCurrentPage('loadSesh'), 'Load Session',]);
 

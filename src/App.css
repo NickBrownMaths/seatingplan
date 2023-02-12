@@ -96,6 +96,7 @@ body {
   background-color: var(--colour6);
   color: var(--colour1);
 }
+
 .KillButton:hover {
   background-color: var(--colour7);
 }
@@ -112,6 +113,7 @@ body {
   background-color: var(--colour8);
   color: var(--colour1);
 }
+
 .LinkButton:hover {
   background-color: var(--colour9);
 }
@@ -128,6 +130,7 @@ body {
   background-color: var(--colour10);
   color: var(--colour1);
 }
+
 .UnlinkButton:hover {
   background-color: var(--colour11);
 }
@@ -150,7 +153,7 @@ body {
   min-width: var(--widthBigger);
 }
 
-.TableParty{
+.TableParty {
   margin-top: 15px;
 }
 
@@ -173,4 +176,82 @@ body {
   background-color: var(--colour2);
   left: var(--widthBiggerer);
   top: 0
+}
+
+.LoadSaveHolder {
+  display: inline-block;
+}
+
+.InstructionHolder {
+  display: grid;
+  grid-template-columns: var(--height) auto;
+}
+
+.InstructionBox,
+.CopyBox {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  max-width: 1000px;
+  word-wrap: break-word;
+  min-height: var(--height);
+  line-height: 200%;
+
+  border-color: var(--colour4);
+  border-style: solid;
+
+  background-color: var(--colour3);
+}
+
+.FakeButton {
+  display: grid;
+  position: relative;
+  max-width: var(--height);
+  max-height: var(--height);
+}
+
+
+.FakeKillButton {
+  min-height: var(--height);
+  min-width: var(--height);
+  max-height: var(--height);
+  max-width: var(--height);
+  background-color: var(--colour6);
+  color: var(--colour1);
+  margin: 2px;
+}
+
+.FakeKillButton:hover {
+  background-color: var(--colour7);
+}
+
+.FakeLinkButton {
+  min-height: var(--height);
+  min-width: var(--height);
+  max-height: var(--height);
+  max-width: var(--height);
+  min-height: var(--height);
+  background-color: var(--colour8);
+  color: var(--colour1);
+  margin: 2px;
+}
+
+.FakeLinkButton:hover {
+  background-color: var(--colour9);
+}
+
+.FakeUnlinkButton {
+  min-height: var(--height);
+  min-width: var(--height);
+  max-height: var(--height);
+  max-width: var(--height);
+  min-height: var(--height);
+  background-color: var(--colour10);
+  color: var(--colour1);
+  margin: 2px;
+}
+
+.FakeUnlinkButton:hover {
+  background-color: var(--colour11);
 }
