@@ -5,10 +5,12 @@ function PartyForm(props) {
   const { register, handleSubmit } = useForm();
 
   return (
-    <form className='Form' onSubmit={handleSubmit ((data) => {props.setPartyTemp({NAME: data.name, BUMS: +data.bums, KIDS: +data.kids, })})}>
+    <form className='Form' onSubmit={handleSubmit ((data) => {props.setPartyTemp({NAME: data.name, BUMS: +data.bums, KIDS: +data.kids, MEMB: data.memb})})}>
+      
       <input {...register('name')} placeholder='Enter party name' className='FormInput' />
       <input {...register('bums')} placeholder='# bums' className='FormInputSmall' type='number'/>
       <input {...register('kids')} placeholder='# kids' className='FormInputSmall' type='number'/>
+      <input {...register('memb')} placeholder='Group members' className='FormInputLarge' />
       <input className='FormButton' type='submit' value='Add Party' />
     </form>
   )

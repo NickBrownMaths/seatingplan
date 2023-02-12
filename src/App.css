@@ -37,6 +37,8 @@ body {
 .PartyList,
 .Table,
 .Party,
+.TableSelected,
+.PartySelected,
 .TableParty {
   display: flex;
   flex-wrap: wrap;
@@ -75,7 +77,12 @@ body {
   min-height: var(--height);
   margin: var(--margin);
 }
-
+.FormInputLarge {
+  min-width: var(--widthBiggerer);
+  max-width: var(--widthBiggerer);
+  min-height: var(--height);
+  margin: var(--margin);
+}
 .FormButton {
   min-width: var(--widthSmall);
   min-height: var(--height);
@@ -254,4 +261,16 @@ body {
 
 .FakeUnlinkButton:hover {
   background-color: var(--colour11);
+}
+
+.ListTop {
+  margin: 8px;
+}
+
+.MemberList {
+  display: block;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  transform: translatex(-10px)
 }

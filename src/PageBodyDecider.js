@@ -34,6 +34,8 @@ function PageBodyDecider(props) {
           Clicking the red X will remove a table or group.
           Clicking a green @ on a table, and another on a group, assigns that group to that table.
           Clicking the yellow Ø will unassign a group.
+          <br />
+          Optionally, you can add the names of the group members. Please separate the names with a comma, but without a space.
         </div>
       </div>
     )

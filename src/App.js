@@ -27,6 +27,8 @@ function App() {
     if (partyTemp !== 0) {
       if (partyTemp.BUMS === '') { partyTemp.BUMS = 0 }
       if (partyTemp.KIDS === '') { partyTemp.KIDS = 0 }
+      let memberArray = partyTemp.MEMB.split(',');
+      partyTemp.MEMB = memberArray;
       setPartyList(partyList => [...partyList, partyTemp]);
     }
   }, [partyTemp]);
