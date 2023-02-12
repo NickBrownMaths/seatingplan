@@ -11,8 +11,6 @@
   --colour10: #888800;
   --colour11: #ffff00;
 
-
-
   --height: 30px;
   --width: 200px;
   --widthBig: 300px;
@@ -160,6 +158,7 @@ body {
 .Table {
   max-width: var(--widthBigger);
   min-width: var(--widthBigger);
+  margin-left: var(--height);
 }
 
 .TableParty {

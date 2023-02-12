@@ -69,20 +69,47 @@ function App() {
   }, [partyLink, tableLink]);
 
   useEffect(() => {
-    if (severLink !== null) {
+    if (severLink === 'all') {
       console.log(severLink)
 
-      let newTables = tableList ;
-      let removedParty = newTables[severLink.TABLEIDX].PARTIES.splice(severLink.PARTYIDX, 1) ;
+
+      for (let i = tableList.length - 1; i >= 0; i--) {
+        for (let j = tableList[i].PARTIES.length - 1; j >= 0; j--) {
+
+
+
+          let newTables = tableList;
+          let removedParty = newTables[i].PARTIES.splice(j, 1);
+          newTables[i].BUMS = newTables[i].BUMS - removedParty[0].BUMS;
+          newTables[i].KIDS = newTables[i].KIDS - removedParty[0].KIDS;
+          setTableList(newTables);
+          console.log(removedParty);
+          setPartyList(partyList => [...partyList, removedParty[0]]);
+
+
+
+
+
+
+        }
+      }
+
+
+
+
+
+
+
+      setSeverLink(null);
+    }
+    else if (severLink !== null) {
+      let newTables = tableList;
+      let removedParty = newTables[severLink.TABLEIDX].PARTIES.splice(severLink.PARTYIDX, 1);
       newTables[severLink.TABLEIDX].BUMS = newTables[severLink.TABLEIDX].BUMS - removedParty[0].BUMS;
       newTables[severLink.TABLEIDX].KIDS = newTables[severLink.TABLEIDX].KIDS - removedParty[0].KIDS;
       setTableList(newTables);
-
       console.log(removedParty);
-
       setPartyList(partyList => [...partyList, removedParty[0]]);
-
-
       setSeverLink(null);
     }
   }, [severLink]);

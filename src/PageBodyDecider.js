@@ -32,10 +32,12 @@ function PageBodyDecider(props) {
           <button className='FakeKillButton' > X </button>
           <button className='FakeLinkButton' > @ </button>
           <button className='FakeUnlinkButton' > Ø </button>
+          <button className='FakeUnlinkButton' > ! </button>
           <br />
           Clicking the red X will remove a table or group.
           Clicking a green @ on a table, and another green @ on a group, assigns that group to that table.
           Clicking the yellow Ø will unassign a group.
+          Clicking the yellow ! will unassign all groups.
           <br />
           Optionally, you can add the names of the group members. Please separate the names with a comma, but without a space.
         </div>
