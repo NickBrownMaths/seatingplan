@@ -75,36 +75,16 @@ function App() {
 
   useEffect(() => {
     if (severLink === 'all') {
-      console.log(severLink)
-
-
       for (let i = tableList.length - 1; i >= 0; i--) {
         for (let j = tableList[i].PARTIES.length - 1; j >= 0; j--) {
-
-
-
           let newTables = tableList;
           let removedParty = newTables[i].PARTIES.splice(j, 1);
           newTables[i].BUMS = newTables[i].BUMS - removedParty[0].BUMS;
           newTables[i].KIDS = newTables[i].KIDS - removedParty[0].KIDS;
           setTableList(newTables);
-          console.log(removedParty);
           setPartyList(partyList => [...partyList, removedParty[0]]);
-
-
-
-
-
-
         }
       }
-
-
-
-
-
-
-
       setSeverLink(null);
     }
     else if (severLink !== null) {
@@ -113,7 +93,6 @@ function App() {
       newTables[severLink.TABLEIDX].BUMS = newTables[severLink.TABLEIDX].BUMS - removedParty[0].BUMS;
       newTables[severLink.TABLEIDX].KIDS = newTables[severLink.TABLEIDX].KIDS - removedParty[0].KIDS;
       setTableList(newTables);
-      console.log(removedParty);
       setPartyList(partyList => [...partyList, removedParty[0]]);
       setSeverLink(null);
     }

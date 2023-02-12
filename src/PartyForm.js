@@ -12,7 +12,6 @@ function PartyForm(props) {
 
   return (
     <form className='Form' onSubmit={handleSubmit((data) => { props.setPartyTemp({ NAME: data.name, BUMS: +data.bums, KIDS: +data.kids, MEMB: data.memb }); setFormState0(''); setFormState1(''); setFormState2(''); setFormState3(''); })}>
-
       <input {...register('name')} onChange={(ev) => { setFormState0(ev.target.value) }} value={formState0} placeholder='Enter party name' className='FormInput' />
       <input {...register('bums')} onChange={(ev) => { setFormState1(ev.target.value) }} value={formState1} placeholder='# bums' className='FormInputSmall' type='number' />
       <input {...register('kids')} onChange={(ev) => { setFormState2(ev.target.value) }} value={formState2} placeholder='# kids' className='FormInputSmall' type='number' />
