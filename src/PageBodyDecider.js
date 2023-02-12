@@ -1,3 +1,4 @@
+import LoadForm from "./LoadForm.js";
 import PageAddTable from "./PageAddTable.js";
 
 function PageBodyDecider(props) {
@@ -10,7 +11,7 @@ function PageBodyDecider(props) {
         setTableLink={props.setTableLink} tableLink={props.tableLink}
         setPartyList={props.setPartyList} partyList={props.partyList}
         setPartyTemp={props.setPartyTemp}
-        setPartyKill={props.setPartyKill} 
+        setPartyKill={props.setPartyKill}
         setPartyLink={props.setPartyLink} partyLink={props.partyLink}
         setSeverLink={props.setSeverLink}
       />
@@ -24,6 +25,7 @@ function PageBodyDecider(props) {
           This app helps party planners assign seats at tables.
           Click the Assign Button to start.
           Groups have a number of bums (B), and a number of kids (K).
+          Unassigned groups appear in the left hand column. Tables are on the right.
           As groups are added to tables, the tables will to the total number of Bs and Ks who are to be seated there.
           <br />
           <br />
@@ -32,7 +34,7 @@ function PageBodyDecider(props) {
           <button className='FakeUnlinkButton' > Ø </button>
           <br />
           Clicking the red X will remove a table or group.
-          Clicking a green @ on a table, and another on a group, assigns that group to that table.
+          Clicking a green @ on a table, and another green @ on a group, assigns that group to that table.
           Clicking the yellow Ø will unassign a group.
           <br />
           Optionally, you can add the names of the group members. Please separate the names with a comma, but without a space.
@@ -57,7 +59,15 @@ function PageBodyDecider(props) {
     )
   }
   else {
-
+    return (
+      <div className="LoadSaveHolder" >
+        <div className="InstructionBox">
+          Paste your data in the box below.
+        </div>
+        <br />
+        <LoadForm setLoadData={props.setLoadData} />
+      </div>
+    )
   }
 }
 export default PageBodyDecider;

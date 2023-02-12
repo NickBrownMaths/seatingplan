@@ -4,9 +4,7 @@ import NavBar from './NavBar';
 import PageBodyDecider from './PageBodyDecider';
 
 function App() {
-
   const [currentPage, setCurrentPage] = useState('instruct');
-
   const [tableList, setTableList] = useState([]);
   const [partyList, setPartyList] = useState([]);
   const [tableTemp, setTableTemp] = useState(0);
@@ -16,6 +14,7 @@ function App() {
   const [tableLink, setTableLink] = useState(null);
   const [partyLink, setPartyLink] = useState(null);
   const [severLink, setSeverLink] = useState(null);
+  const [loadData, setLoadData] = useState(null);
 
   useEffect(() => {
     if (tableTemp !== 0) {
@@ -88,6 +87,16 @@ function App() {
     }
   }, [severLink]);
 
+  useEffect(() => {
+    if (loadData !== null) {
+      let newData = JSON.parse(loadData);
+      setTableList(newData.TABLELIST);
+      setPartyList(newData.PARTYLIST);
+      setLoadData(null);
+      setCurrentPage('addTable');
+    }
+  }, [loadData]);
+
   let buttons = [];
   buttons.push([() => setCurrentPage('instruct'), 'Instructions',]);
   buttons.push([() => setCurrentPage('addTable'), 'Assign',]);
@@ -108,6 +117,7 @@ function App() {
         setPartyKill={setPartyKill}
         setPartyLink={setPartyLink} partyLink={partyLink}
         setSeverLink={setSeverLink} tableLink={tableLink}
+        setLoadData={setLoadData}
       />
     </div>
   );
